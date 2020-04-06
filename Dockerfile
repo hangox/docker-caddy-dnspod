@@ -5,7 +5,7 @@ FROM golang:1.13-alpine as builder
 
 RUN apk add --no-cache git gcc musl-dev
 
-COPY builder.sh /usr/bin/builder.sh
+ADD https://raw.githubusercontent.com/jeffreystoke/caddy-docker/master/builder/builder.sh /usr/bin/builder.sh
 
 ARG version="master"
 ARG plugins="cache,cors,expires,realip,ipfilter,dnspod,http.forwardprox"
